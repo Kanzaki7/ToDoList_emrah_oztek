@@ -17,23 +17,24 @@ body {
 
 .mainBody {
     /* background-color: yellow; */
-    width: 50%;
+    width: 70%;
     height: 100%;
     display: flex;
     align-items: center;
     flex-direction: column;
-    gap: 100px;
+    gap: 55px;
 }
 
 .title {
-    font-size: 45px;
+    font-size: 60px;
     color: white;
+    font-family: 'Grape Nuts', cursive;
 }
 
 .divMainInput {
     /* margin-top: 100px; */
     height: 50px;
-    width: 370px;
+    width: 600px;
     background-color: white;
     border-radius: 10px;
     border: 3px solid black;
@@ -47,13 +48,14 @@ body {
     border: none;
     width: 85%;
     height: 80%;
-    font-size: 27px;
+    font-size: 25px;
     border-radius: 10px 0 0 10px;
+    font-family: 'Grape Nuts', cursive;
 }
 
 .divPlus {
     background-color: rgb(235, 5, 5);
-    width: 12%;
+    width: 10%;
     height: 85%;
     display: flex;
     justify-content: center;
@@ -73,12 +75,17 @@ body {
     height: 100%;
     width: 65%;
     border: 3px solid black;
-    font-size: 27px;
+    font-size: 25px;
+    overflow-x: hidden;
+    display: flex;
+    align-items: center;
+    transition: .4s all ease;
+    font-family: 'Grape Nuts', cursive;
 }
 
 .divElement {
     height: 40px;
-    width: 420px;
+    width: 1000px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -90,7 +97,7 @@ body {
 
 .btnChecked {
     background-color: green;
-    width: 10%;
+    width: 6%;
     height: 100%;
     cursor: pointer;
     border-radius: 5px;
@@ -102,7 +109,7 @@ body {
 
 .btnDelete {
     background-color: red;
-    width: 10%;
+    width: 6%;
     height: 100%;
     cursor: pointer;
     border-radius: 5px;
@@ -114,7 +121,7 @@ body {
 
 .btnModify {
     background-color: blue;
-    width: 10%;
+    width: 6%;
     height: 100%;
     cursor: pointer;
     border-radius: 5px;
@@ -142,7 +149,10 @@ body {
     height: 100%;
     width: 65%;
     border: 1px solid black;
-    font-size: 27px;
+    font-size: 25px;
+    transition: .4s all ease;
+    font-family: 'Grape Nuts', cursive;
+    font-weight: bold;
 }
 
 .inputModify {
@@ -150,7 +160,7 @@ body {
     height: 100%;
     width: 65%;
     border: 1px solid black;
-    font-size: 27px;
+    font-size: 25px;
 }
 
 /* modal */
@@ -170,12 +180,12 @@ body {
 }
 
 .modal-content {
-    width: 30%;
+    width: 45%;
     height: 38%;
     background-color: rgb(34, 36, 42);
     position: absolute;
     top: 28%;
-    left: 35%;
+    left: 28%;
     border-radius: 10px;
     border: 1px solid gray;
     display: flex;
@@ -186,14 +196,17 @@ body {
 }
 
 .inputModal {
-    width: 300px;
+    width: 500px;
     height: 40px;
-    font-size: 27px;
+    font-size: 25px;
+    font-family: 'Grape Nuts', cursive;
 }
 
 .texteModal {
-    font-size: 27px;
+    font-size: 25px;
     color: white;
+    font-family: 'Grape Nuts', cursive;
+    font-weight: bold;
 }
 
 .btnModal {
@@ -224,5 +237,22 @@ body {
     border: 3px solid black;
     font-size: 20px;
     color: white;
+    font-family: 'Grape Nuts', cursive;
+    font-weight: bold;
 }
 
+.tri {
+
+}
+
+.divListe {
+    height: 400px;
+    overflow-y: hidden;
+}
+
+.counter {
+    font-size: 35px;
+    color: rgb(235, 120, 5);
+    font-family: 'Grape Nuts', cursive;
+    font-weight: bold;
+}

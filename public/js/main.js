@@ -8,6 +8,7 @@ let mainBody = document.querySelector(".mainBody");
 // let btnModal = document.querySelector(".btnModal");
 let select = document.querySelector("#selectClass");
 let divListe = document.querySelector(".divListe");
+let counter = document.querySelector(".counter");
 
 
 // déclaration des fonctions
@@ -60,7 +61,6 @@ let addElement = () => {
         divForElement.appendChild(btnChecked);
         divForElement.appendChild(btnDelete);
         divForElement.appendChild(btnModify);
-        divListe.appendChild(divForElement);
         mainBody.appendChild(modal);
         mainInput.value = "";
         let btnCheckedAll = document.querySelectorAll(".btnChecked");
@@ -74,24 +74,27 @@ let addElement = () => {
         console.log(createdElementsArray[2]);
         console.log(btnCheckedArray);
         console.log(btnDeleteArray);
+        let counterPlus = parseInt(counter.innerText[0]);
+        console.log(counterPlus);
+        if (counterPlus < 8) {
+            divListe.appendChild(divForElement);
+            counterPlus++;
+            counter.innerText = counterPlus+" / 8";
+        } else {
+            alert("Nombre limite atteint !")
+        }
 
-        let deleteElement = (e) => { 
-            if (e.target.classList == "btnDelete") {
-                e.target.parentElement.remove();
-                console.log(e.target.parentElement);
-            } else if (e.target.classList == "fa-solid fa-trash") {
-                e.target.parentElement.parentElement.remove();
-                console.log(e.target.parentElement);
-            }
-        }    
-    
 
-        btnDeleteArray.forEach(element => {
-            element.addEventListener("click", deleteElement)
-        });
+        btnDelete.addEventListener("click", () => {
+            counterPlus = parseInt(counter.innerText[0]);
+            divForElement.remove();
+            counterPlus--;
+            counter.innerText = counterPlus+" / 8";
+        })
 
         btnChecked.addEventListener("click",()=>{
             toDoElement.classList.toggle("classChecked");
+            divForElement.classList.toggle("tri");
         })
 
         btnModify.addEventListener("click", () => {
@@ -106,6 +109,32 @@ let addElement = () => {
             modal.style = "display: none";
         })
 
+        let changeSelect = (e) => {
+            createdElementsArray.forEach(element => {
+                switch (e.target.value) {
+                    case "All":
+                        element.style = "display: flex"
+                        break;
+                    case "Checked":
+                        if (element.classList.contains("tri")) {
+                            element.style = "display: flex"
+                        } else {
+                            element.style = "display: none"
+                        }
+                        break;
+                        case "Unchecked":
+                            if (!element.classList.contains("tri")) {
+                                element.style = "display: flex"
+                            } else {
+                                element.style = "display: none"
+                            }
+                            break;
+                }
+            });
+        }
+    
+        select.addEventListener("change", changeSelect)
+
     } else {
         alert("Le champ est vide !");
     }
@@ -115,9 +144,3 @@ let addElement = () => {
 // addEventListeners
 plus.addEventListener("click", addElement)
 
-let changeSelect = (event) => {
-    let x = event.target
-    console.log(x.value);
-}
-
-select.addEventListener("change", changeSelect)
