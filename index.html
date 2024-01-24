@@ -13,10 +13,33 @@
             <div>
                 <h1 class="title">ToDo List</h1>
             </div>
-            <div class="divMainInput">
-                <input type="text" class="mainInput">
-                <i class="fa-solid fa-plus"></i>
+            <div>
+                <div class="firstDiv">
+                    <div class="divMainInput">
+                        <input type="text" class="mainInput">
+                        <div class="divPlus">
+                            <i class="fa-solid fa-plus"></i>
+                        </div>
+                    </div>
+                    <select name="selectClasses" id="selectClass">
+                        <option value="All">All</option>
+                        <option value="Checked">Checked</option>
+                        <option value="Unchecked">Unchecked</option>
+                    </select>
+                </div>
+                <div class="divListe">
+
+                </div>
             </div>
+            <!-- <div class="modal">
+                <div class="modal-content">
+                    <p class="texteModal">Modifie ton texte :</p>
+                    <input type="text" class="inputModal">
+                    <div class="btnModal">
+                        <i class="fa-solid fa-pen-nib"></i>
+                    </div>
+                </div>
+            </div> -->
         </div>
     </section>
     <script src="./public/js/main.js"></script>
